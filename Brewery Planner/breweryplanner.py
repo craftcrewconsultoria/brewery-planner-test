@@ -12,41 +12,37 @@ import plotly.graph_objects as go
 import plotly.io as pio
 import streamlit as st
 
+# =========================================================
+# STREAMLIT PAGE CONFIG  (TEM QUE SER O PRIMEIRO st.*)
+# =========================================================
+st.set_page_config(
+    page_title="Brewery Planner | Planejamento Cervejaria",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    page_icon="🍺",
+)
+pio.templates.default = "plotly_white"
 
 # =========================================================
-# HARD-GUARD: evita "missing ScriptRunContext" (python breweryplanner.py)
+# HARD-GUARD: se rodar com "python breweryplanner.py", roda via Streamlit
+# (evita "missing ScriptRunContext" e comportamento estranho no VSCode)
 # =========================================================
-def _ensure_running_via_streamlit():
-    """
-    Se você executar este arquivo com `python breweryplanner.py`, o Streamlit
-    entra em 'bare mode' e começa a cuspir warnings e/ou comportamentos estranhos.
-    Aqui a gente aborta com uma mensagem clara.
-    """
-    try:
-        from streamlit.runtime.scriptrunner import get_script_run_ctx  # type: ignore
+if __name__ == "__main__":
+    import sys
+    from streamlit.web import cli as stcli
 
-        if get_script_run_ctx() is None:
-            print("\n[ERRO] Este app precisa ser executado com Streamlit, não com python.")
-            print("Use:\n    streamlit run breweryplanner.py\n")
-            raise SystemExit(0)
-    except Exception:
-        # Em versões bem antigas do Streamlit, esse import pode falhar.
-        # Nesse caso, seguimos normalmente.
-        return
-
-
-_ensure_running_via_streamlit()
-
+    sys.argv = ["streamlit", "run", str(Path(__file__).resolve())]
+    raise SystemExit(stcli.main())
 
 # =========================================================
-# CONFIG FILE: tema claro + texto escuro + headless (não abre abas)
+# CONFIG FILE: tema claro + texto escuro + headless
 # =========================================================
 def ensure_streamlit_config():
     """
     Cria .streamlit/config.toml se não existir.
-    - Força tema claro e texto escuro (melhora leitura no st.data_editor)
-    - server.headless=true impede o Streamlit de abrir uma nova aba a cada restart
-      (muito comum quando VSCode auto-save dispara restarts).
+    - Tema claro + texto escuro
+    - headless=true evita abrir abas automaticamente
+    - runOnSave=false reduz restarts no VSCode
     """
     try:
         project_root = Path(__file__).resolve().parent
@@ -63,7 +59,7 @@ font="sans serif"
 
 [server]
 headless=true
-runOnSave=true
+runOnSave=false
 
 [browser]
 gatherUsageStats=false
@@ -72,46 +68,29 @@ gatherUsageStats=false
             cfg_dir.mkdir(parents=True, exist_ok=True)
             cfg_file.write_text(desired, encoding="utf-8")
 
-            # mostra aviso só uma vez por sessão
+            # aviso (agora ok, porque page_config já rodou)
             if not st.session_state.get("_cfg_notice_shown", False):
                 st.session_state["_cfg_notice_shown"] = True
                 st.warning(
-                    "Criei **.streamlit/config.toml** para forçar **tema claro com texto escuro** "
-                    "e evitar abrir abas automaticamente. "
-                    "Se você já estava com o app rodando, pare e rode de novo:\n\n"
+                    "Criei **.streamlit/config.toml** (tema claro + texto escuro + headless). "
+                    "Pare e rode novamente para aplicar:\n\n"
                     "`streamlit run breweryplanner.py`"
                 )
     except Exception as e:
         if not st.session_state.get("_cfg_err_shown", False):
             st.session_state["_cfg_err_shown"] = True
             st.warning(
-                "Não consegui criar automaticamente `.streamlit/config.toml`. "
-                "Você pode criar manualmente para forçar tema claro e evitar abrir abas.\n\n"
+                "Não consegui criar automaticamente `.streamlit/config.toml`.\n\n"
                 f"Detalhe: {e}"
             )
 
-
 ensure_streamlit_config()
-
-
-# =========================================================
-# STREAMLIT PAGE CONFIG
-# =========================================================
-st.set_page_config(
-    page_title="Brewery Planner | Planejamento Cervejaria",
-    layout="wide",
-    initial_sidebar_state="expanded",
-    page_icon="🍺",
-)
-pio.templates.default = "plotly_white"
-
 
 # =========================================================
 # CONSTANTS
 # =========================================================
 DEFAULT_SCENARIO_NAME = "Base"
 
-# IMPORTANTE: salva fora do diretório do projeto para reduzir "restart" por file watcher.
 DB_DIR = Path.home() / ".breweryplanner"
 DB_FILE = DB_DIR / "breweryplanner_db.json"
 
@@ -126,7 +105,6 @@ SKUS_REQUIRED = [
 ]
 EMB_EXCLUDE_DIST = ("Barril 30L", "Barril 50L", "Copo Taproom")
 VAR_TEXT = "#0f172a"
-
 
 # =========================================================
 # CSS (layout e cards) — sem tentar forçar texto da grid via CSS
