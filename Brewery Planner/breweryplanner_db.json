@@ -1,0 +1,502 @@
+{
+  "scenarios": {
+    "Base": {
+      "capex_db": [
+        {
+          "Categoria": "Produção Quente",
+          "Item": "Tribloco 500L Industrial",
+          "Valor": 68000.0,
+          "Status": "Orçado"
+        },
+        {
+          "Categoria": "Produção Quente",
+          "Item": "Moinho de Rolos Alta Capacidade",
+          "Valor": 4500.0,
+          "Status": "Pendente"
+        },
+        {
+          "Categoria": "Fermentação",
+          "Item": "Fermentador Cônico 500L (Unid 1)",
+          "Valor": 14500.0,
+          "Status": "Orçado"
+        },
+        {
+          "Categoria": "Fermentação",
+          "Item": "Fermentador Cônico 500L (Unid 2)",
+          "Valor": 14500.0,
+          "Status": "Orçado"
+        },
+        {
+          "Categoria": "Fermentação",
+          "Item": "Fermentador Cônico 500L (Unid 3)",
+          "Valor": 14500.0,
+          "Status": "Orçado"
+        },
+        {
+          "Categoria": "Fermentação",
+          "Item": "Fermentador Cônico 500L (Unid 4)",
+          "Valor": 14500.0,
+          "Status": "Orçado"
+        },
+        {
+          "Categoria": "Frio",
+          "Item": "Chiller 15.000 kcal + Bomba Glicol",
+          "Valor": 18500.0,
+          "Status": "Pendente"
+        },
+        {
+          "Categoria": "Frio",
+          "Item": "Câmara Fria Modular (3x3m)",
+          "Valor": 12000.0,
+          "Status": "Pendente"
+        },
+        {
+          "Categoria": "Envase",
+          "Item": "Envasadora Counter Pressure Semi-auto",
+          "Valor": 3500.0,
+          "Status": "Comprado"
+        },
+        {
+          "Categoria": "Logística",
+          "Item": "Parque Barris Inox (Lote A)",
+          "Valor": 16500.0,
+          "Status": "Pendente"
+        },
+        {
+          "Categoria": "Infraestrutura",
+          "Item": "Adequação Civil e Piso",
+          "Valor": 35000.0,
+          "Status": "Estimado"
+        },
+        {
+          "Categoria": "Infraestrutura",
+          "Item": "Licenciamento e Projetos",
+          "Valor": 5000.0,
+          "Status": "Estimado"
+        }
+      ],
+      "opex_outros_db": [
+        {
+          "Descrição": "Aluguel Galpão",
+          "Valor": 5000.0
+        },
+        {
+          "Descrição": "Energia (Fixo)",
+          "Valor": 1500.0
+        },
+        {
+          "Descrição": "Marketing",
+          "Valor": 2000.0
+        },
+        {
+          "Descrição": "Internet/Telefonia",
+          "Valor": 250.0
+        },
+        {
+          "Descrição": "Contabilidade",
+          "Valor": 300.0
+        }
+      ],
+      "funcionarios_db": [
+        {
+          "Nome": "Cervejeiro(a)",
+          "Modalidade": "CLT",
+          "Salário Bruto": 4500.0,
+          "Encargos CLT (%)": 70.0,
+          "Considerar 13º": true,
+          "Considerar Férias": true
+        },
+        {
+          "Nome": "Auxiliar Produção",
+          "Modalidade": "CLT",
+          "Salário Bruto": 2500.0,
+          "Encargos CLT (%)": 70.0,
+          "Considerar 13º": true,
+          "Considerar Férias": true
+        },
+        {
+          "Nome": "Vendas (PJ)",
+          "Modalidade": "PJ",
+          "Salário Bruto": 2200.0,
+          "Encargos CLT (%)": 0.0,
+          "Considerar 13º": false,
+          "Considerar Férias": false
+        }
+      ],
+      "insumos_db": [
+        {
+          "Tipo": "Malte",
+          "Nome": "Malte Pilsen Agrária",
+          "Unidade": "kg",
+          "Custo": 6.9
+        },
+        {
+          "Tipo": "Malte",
+          "Nome": "Malte Pale Ale",
+          "Unidade": "kg",
+          "Custo": 7.5
+        },
+        {
+          "Tipo": "Malte",
+          "Nome": "Malte Caramelo",
+          "Unidade": "kg",
+          "Custo": 11.0
+        },
+        {
+          "Tipo": "Malte",
+          "Nome": "Malte Trigo (Weiss)",
+          "Unidade": "kg",
+          "Custo": 8.0
+        },
+        {
+          "Tipo": "Malte",
+          "Nome": "Malte Torrado/Chocolate",
+          "Unidade": "kg",
+          "Custo": 14.0
+        },
+        {
+          "Tipo": "Lúpulo",
+          "Nome": "Lúpulo Citra",
+          "Unidade": "kg",
+          "Custo": 320.0
+        },
+        {
+          "Tipo": "Lúpulo",
+          "Nome": "Lúpulo Magnum (Amargor)",
+          "Unidade": "kg",
+          "Custo": 180.0
+        },
+        {
+          "Tipo": "Lúpulo",
+          "Nome": "Lúpulo Cascade",
+          "Unidade": "kg",
+          "Custo": 250.0
+        },
+        {
+          "Tipo": "Lúpulo",
+          "Nome": "Lúpulo Saaz (Lager)",
+          "Unidade": "kg",
+          "Custo": 280.0
+        },
+        {
+          "Tipo": "Lúpulo",
+          "Nome": "Lúpulo Hallertau",
+          "Unidade": "kg",
+          "Custo": 290.0
+        },
+        {
+          "Tipo": "Levedura",
+          "Nome": "US-05 (Ale Americana)",
+          "Unidade": "pct",
+          "Custo": 28.0
+        },
+        {
+          "Tipo": "Levedura",
+          "Nome": "S-04 (Ale Inglesa/Stout)",
+          "Unidade": "pct",
+          "Custo": 26.0
+        },
+        {
+          "Tipo": "Levedura",
+          "Nome": "W-34/70 (Lager)",
+          "Unidade": "pct",
+          "Custo": 35.0
+        },
+        {
+          "Tipo": "Levedura",
+          "Nome": "WB-06 (Weiss)",
+          "Unidade": "pct",
+          "Custo": 30.0
+        }
+      ],
+      "receitas_header": [
+        {
+          "ID": 1,
+          "Nome": "American IPA",
+          "Volume Batelada (L)": 500
+        },
+        {
+          "ID": 2,
+          "Nome": "Classic APA",
+          "Volume Batelada (L)": 500
+        },
+        {
+          "ID": 3,
+          "Nome": "Pilsen Padrão",
+          "Volume Batelada (L)": 500
+        },
+        {
+          "ID": 4,
+          "Nome": "Dry Stout",
+          "Volume Batelada (L)": 500
+        },
+        {
+          "ID": 5,
+          "Nome": "Weissbier",
+          "Volume Batelada (L)": 500
+        }
+      ],
+      "receitas_detalhe": [
+        {
+          "Receita_ID": 2,
+          "Insumo": "Malte Pale Ale",
+          "Qtd": 100.0,
+          "Custo_Unit": 7.5,
+          "Custo_Total": 750.0
+        },
+        {
+          "Receita_ID": 2,
+          "Insumo": "Malte Caramelo",
+          "Qtd": 5.0,
+          "Custo_Unit": 11.0,
+          "Custo_Total": 55.0
+        },
+        {
+          "Receita_ID": 2,
+          "Insumo": "Lúpulo Cascade",
+          "Qtd": 2.5,
+          "Custo_Unit": 250.0,
+          "Custo_Total": 625.0
+        },
+        {
+          "Receita_ID": 2,
+          "Insumo": "US-05 (Ale Americana)",
+          "Qtd": 25.0,
+          "Custo_Unit": 28.0,
+          "Custo_Total": 700.0
+        },
+        {
+          "Receita_ID": 3,
+          "Insumo": "Malte Pilsen Agrária",
+          "Qtd": 95.0,
+          "Custo_Unit": 6.9,
+          "Custo_Total": 655.5
+        },
+        {
+          "Receita_ID": 3,
+          "Insumo": "Malte Caramelo",
+          "Qtd": 3.0,
+          "Custo_Unit": 11.0,
+          "Custo_Total": 33.0
+        },
+        {
+          "Receita_ID": 3,
+          "Insumo": "Lúpulo Magnum (Amargor)",
+          "Qtd": 0.3,
+          "Custo_Unit": 180.0,
+          "Custo_Total": 54.0
+        },
+        {
+          "Receita_ID": 3,
+          "Insumo": "Lúpulo Saaz (Lager)",
+          "Qtd": 1.0,
+          "Custo_Unit": 280.0,
+          "Custo_Total": 280.0
+        },
+        {
+          "Receita_ID": 3,
+          "Insumo": "W-34/70 (Lager)",
+          "Qtd": 40.0,
+          "Custo_Unit": 35.0,
+          "Custo_Total": 1400.0
+        },
+        {
+          "Receita_ID": 4,
+          "Insumo": "Malte Pale Ale",
+          "Qtd": 85.0,
+          "Custo_Unit": 7.5,
+          "Custo_Total": 637.5
+        },
+        {
+          "Receita_ID": 4,
+          "Insumo": "Malte Torrado/Chocolate",
+          "Qtd": 10.0,
+          "Custo_Unit": 14.0,
+          "Custo_Total": 140.0
+        },
+        {
+          "Receita_ID": 4,
+          "Insumo": "Malte Caramelo",
+          "Qtd": 5.0,
+          "Custo_Unit": 11.0,
+          "Custo_Total": 55.0
+        },
+        {
+          "Receita_ID": 4,
+          "Insumo": "Lúpulo Magnum (Amargor)",
+          "Qtd": 0.8,
+          "Custo_Unit": 180.0,
+          "Custo_Total": 144.0
+        },
+        {
+          "Receita_ID": 4,
+          "Insumo": "S-04 (Ale Inglesa/Stout)",
+          "Qtd": 25.0,
+          "Custo_Unit": 26.0,
+          "Custo_Total": 650.0
+        },
+        {
+          "Receita_ID": 5,
+          "Insumo": "Malte Trigo (Weiss)",
+          "Qtd": 50.0,
+          "Custo_Unit": 8.0,
+          "Custo_Total": 400.0
+        },
+        {
+          "Receita_ID": 5,
+          "Insumo": "Malte Pilsen Agrária",
+          "Qtd": 50.0,
+          "Custo_Unit": 6.9,
+          "Custo_Total": 345.0
+        },
+        {
+          "Receita_ID": 5,
+          "Insumo": "Lúpulo Hallertau",
+          "Qtd": 0.6,
+          "Custo_Unit": 290.0,
+          "Custo_Total": 174.0
+        },
+        {
+          "Receita_ID": 5,
+          "Insumo": "WB-06 (Weiss)",
+          "Qtd": 25.0,
+          "Custo_Unit": 30.0,
+          "Custo_Total": 750.0
+        },
+        {
+          "Receita_ID": 1,
+          "Insumo": "Malte Pale Ale",
+          "Qtd": 110.0,
+          "Custo_Unit": 7.5,
+          "Custo_Total": 825.0
+        },
+        {
+          "Receita_ID": 1,
+          "Insumo": "Malte Caramelo",
+          "Qtd": 8.0,
+          "Custo_Unit": 11.0,
+          "Custo_Total": 88.0
+        },
+        {
+          "Receita_ID": 1,
+          "Insumo": "Lúpulo Magnum (Amargor)",
+          "Qtd": 0.5,
+          "Custo_Unit": 180.0,
+          "Custo_Total": 90.0
+        },
+        {
+          "Receita_ID": 1,
+          "Insumo": "Lúpulo Citra",
+          "Qtd": 4.0,
+          "Custo_Unit": 320.0,
+          "Custo_Total": 1280.0
+        },
+        {
+          "Receita_ID": 1,
+          "Insumo": "US-05 (Ale Americana)",
+          "Qtd": 30.0,
+          "Custo_Unit": 28.0,
+          "Custo_Total": 840.0
+        }
+      ],
+      "embalagens_db": [
+        {
+          "Embalagem": "Lata 473ml",
+          "Volume (L)": 0.473,
+          "Custo Unit (R$)": 1.6
+        },
+        {
+          "Embalagem": "Garrafa 600ml",
+          "Volume (L)": 0.6,
+          "Custo Unit (R$)": 1.4
+        },
+        {
+          "Embalagem": "Long Neck",
+          "Volume (L)": 0.33,
+          "Custo Unit (R$)": 1.1
+        },
+        {
+          "Embalagem": "Barril 30L",
+          "Volume (L)": 30.0,
+          "Custo Unit (R$)": 0.0
+        },
+        {
+          "Embalagem": "Barril 50L",
+          "Volume (L)": 50.0,
+          "Custo Unit (R$)": 0.0
+        },
+        {
+          "Embalagem": "PET Growler 1,5L",
+          "Volume (L)": 1.5,
+          "Custo Unit (R$)": 2.2
+        },
+        {
+          "Embalagem": "Copo Taproom",
+          "Volume (L)": 0.473,
+          "Custo Unit (R$)": 0.25
+        }
+      ],
+      "precos_sku": [
+        {
+          "SKU": "Lata 473ml",
+          "Canal": "Varejo",
+          "Preço Unit (R$)": 22.0
+        },
+        {
+          "SKU": "Garrafa 600ml",
+          "Canal": "Varejo",
+          "Preço Unit (R$)": 26.0
+        },
+        {
+          "SKU": "Long Neck",
+          "Canal": "Varejo",
+          "Preço Unit (R$)": 14.0
+        },
+        {
+          "SKU": "PET Growler 1,5L",
+          "Canal": "Varejo",
+          "Preço Unit (R$)": 38.0
+        },
+        {
+          "SKU": "Chope (R$/L)",
+          "Canal": "Varejo",
+          "Preço Unit (R$)": 13.0
+        },
+        {
+          "SKU": "Copo Taproom",
+          "Canal": "Taproom",
+          "Preço Unit (R$)": 20.0
+        }
+      ],
+      "mix": {
+        "Volume Vendido (L/mês)": 2000.0,
+        "Mix Taproom (%)": 30.0,
+        "Mix Varejo Chope (%)": 25.0,
+        "Mix Varejo Embalado (%)": 45.0,
+        "Distribuição Embalado (%)": {
+          "Garrafa 600ml": 15.0,
+          "Lata 473ml": 45.0,
+          "Long Neck": 25.0,
+          "PET Growler 1,5L": 15.0
+        },
+        "Receita Base (para custo)": "Pilsen Padrão"
+      },
+      "premissas": {
+        "GIP Químicos (R$/L)": 0.25,
+        "GIP Energia (R$/L)": 0.35,
+        "GIP Água (R$/L)": 0.15,
+        "GIP CO2 (R$/L)": 0.15,
+        "Impostos s/ venda (%)": 10.0,
+        "Capital de giro (meses)": 6
+      },
+      "financiamento": {
+        "Ativo": false,
+        "Percentual financiado (%)": 60.0,
+        "Taxa juros a.a. (%)": 18.0,
+        "Prazo (meses)": 48,
+        "Carência (meses)": 0
+      }
+    }
+  },
+  "selected": "Base"
+}
