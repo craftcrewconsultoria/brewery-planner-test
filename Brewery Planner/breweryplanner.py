@@ -745,6 +745,10 @@ def build_payback_series(invest: float, monthly_cash: float, months: int = 84) -
 
 
 def ensure_white_fig(fig: go.Figure) -> go.Figure:
+    title_text = getattr(getattr(fig.layout, "title", None), "text", None)
+    if title_text is None or str(title_text).strip().lower() == "undefined":
+        fig.update_layout(title_text="")
+
     fig.update_layout(
         template="plotly_white",
         paper_bgcolor="white",
