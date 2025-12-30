@@ -27,10 +27,16 @@ pio.templates.default = "plotly_white"
 # HARD-GUARD: se rodar com "python breweryplanner.py", roda via Streamlit
 # (evita "missing ScriptRunContext" e comportamento estranho no VSCode)
 # =========================================================
-if __name__ == "__main__":
+def _running_inside_streamlit() -> bool:
+    try:
+        from streamlit.runtime.scriptrunner import get_script_run_ctx
+        return get_script_run_ctx() is not None
+    except Exception:
+        return False
+
+if __name__ == "__main__" and not _running_inside_streamlit():
     import sys
     from streamlit.web import cli as stcli
-
     sys.argv = ["streamlit", "run", str(Path(__file__).resolve())]
     raise SystemExit(stcli.main())
 
