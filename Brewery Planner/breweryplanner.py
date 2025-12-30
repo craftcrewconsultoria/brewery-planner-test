@@ -19,6 +19,7 @@ st.set_page_config(
     page_title="Brewery Planner | Planejamento Cervejaria",
     layout="wide",
     initial_sidebar_state="expanded",
+    page_icon="🍺",
 )
 pio.templates.default = "plotly_white"
 
